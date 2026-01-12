@@ -37,10 +37,11 @@ async def handle_client(websocket):
             del connected_users[user_id]
 
 
-start_server = websockets.serve(handle_client, "0.0.0.0", 8080)
+start_server = websockets.serve(handle_client, "0.0.0.0", 8000)
 
 if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
         pass
+
