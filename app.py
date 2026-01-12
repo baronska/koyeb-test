@@ -39,5 +39,8 @@ async def handle_client(websocket):
 
 start_server = websockets.serve(handle_client, "0.0.0.0", 8080)
 
-asyncio.get_event_loop().run_until_complete(start_server)
-asyncio.get_event_loop().run_forever()
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        pass
